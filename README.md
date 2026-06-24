@@ -96,11 +96,3 @@ script). In short:
 4. Open the dashboard at `http://127.0.0.1:1880/ui`.
 5. In another terminal: `cd python && pip install -r requirements.txt && python park_system.py`
 6. Park/exit vehicles from the CLI (or run `auto_simulator.py`) and watch the dashboard update live.
-
-## Submitting to SmartInternz
-
-1. Push this whole folder to a public GitHub repository.
-2. Record your demo video following `docs/VIDEO_DEMO_SCRIPT.md` — it walks
-   through every required scenario (entry, real-time slot display, automatic
-   gate/payment-style exit, and booking/cancelling from the web UI).
-3. Submit the GitHub repo link + video link on the portal.
