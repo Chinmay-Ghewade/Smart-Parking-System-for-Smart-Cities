@@ -27,30 +27,30 @@ logic, the slot booking/cancellation — works exactly as specified in
 the assignment. You get a real, demoable, end-to-end IoT pipeline.
 
 ```
- ┌────────────────────┐        MQTT         ┌─────────────────┐
- │ python/             │ ───────────────────▶│ Local MQTT       │
- │ park_system.py      │  parking/sensor/*   │ Broker           │
- │ (interactive CLI)   │  parking/vehicle/*  │ (Mosquitto)      │
- └────────────────────┘  parking/gate/*      └────────┬─────────┘
+ ┌─────────────────────┐        MQTT          ┌─────────────────┐
+ │ python/             │ ───────────────────▶│ Local MQTT      │
+ │ park_system.py      │  parking/sensor/*    │ Broker          │
+ │ (interactive CLI)   │  parking/vehicle/*   │ (Mosquitto)     │
+ └─────────────────────┘  parking/gate/*      └────────┬────────┘
                                                         │
                                               subscribe/publish
                                                         │
-                                              ┌─────────▼─────────┐
+                                              ┌─────────▼───────────┐
                                               │ Node-RED            │
                                               │ flows.json          │
                                               │  - parses messages  │
                                               │  - updates state    │
-                                              │  - logs to data/     │
+                                              │  - logs to data/    │
                                               │  - drives dashboard │
-                                              └─────────┬─────────┘
+                                              └─────────┬───────────┘
                                                         │
-                                              ┌─────────▼─────────┐
+                                              ┌─────────▼──────────┐
                                               │ Node-RED Dashboard │
                                               │ (browser web app)  │
-                                              │  - slot grid        │
-                                              │  - gate status       │
-                                              │  - counters          │
-                                              │  - book/exit slot     │
+                                              │  - slot grid       │
+                                              │  - gate status     │
+                                              │  - counters        │
+                                              │  - book/exit slot  │
                                               └────────────────────┘
 ```
 
